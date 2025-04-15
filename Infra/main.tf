@@ -17,7 +17,7 @@ module "ecr" {
   repository_name = var.ecr_repository_name
 }
 
-/*module "iam" {
+module "iam" {
   source = "./modules/iam"
 
   lambda_function_name = var.lambda_function_name
@@ -31,7 +31,7 @@ module "lambda" {
   iam_role_arn         = module.iam.lambda_role_arn
 }
 
-module "api_gateway" {
+/*module "api_gateway" {
   source               = "./modules/api_gateway"
   lambda_function_name = module.lambda.lambda_function_name
   lambda_function_arn  = module.lambda.lambda_invoke_arn
