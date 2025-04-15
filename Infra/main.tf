@@ -31,9 +31,9 @@ module "lambda" {
   iam_role_arn         = module.iam.lambda_role_arn
 }
 
-/*module "api_gateway" {
+module "api_gateway" {
   source               = "./modules/api_gateway"
   lambda_function_name = module.lambda.lambda_function_name
   lambda_function_arn  = module.lambda.lambda_invoke_arn
-}*/
+}
 
