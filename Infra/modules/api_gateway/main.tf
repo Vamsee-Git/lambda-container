@@ -10,6 +10,12 @@ resource "aws_apigatewayv2_integration" "this" {
   integration_type = "AWS_PROXY"
   integration_uri  = var.lambda_function_arn
   integration_method = "POST"
+  cors_configuration {
+    allow_origins = ["*"]
+    allow_methods = ["GET", "POST", "PUT", "DELETE"]
+    allow_headers = ["Content-Type", "Authorization"]
+    max_age       = 300
+  }
 }
 
 # Create a route (e.g., GET /hello)
