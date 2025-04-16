@@ -62,12 +62,8 @@ resource "aws_iam_policy" "lambda_ecr_access" {
           "ecr:GetDownloadUrlForLayer",
           "ecr:BatchGetImage",
           "ecr:BatchCheckLayerAvailability"
+          "ecr:GetAuthorizationToken"
         ]
-        Resource = "*"
-      },
-      {
-        Effect   = "Allow"
-        Action   = "ecr:GetAuthorizationToken"
         Resource = "*"
       }
     ]
